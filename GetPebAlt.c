@@ -1,19 +1,23 @@
 #include <windows.h>
 #include "TEB.h"
 
-INT main(VOID)
+PPEB GetPebAlt(VOID)
 {
-	PPEB Peb;
-
+	PTEB Teb;
 #if defined(_WIN64)
-	//64bit
 	PTEB Teb = (PTEB)__readgsqword(0x30);
 #elif define(_WIN32)
 	//32bit
 	PTEB Teb = (PTEB)__readfsdword(0x18);
 #endif
+	return (PPEB)Teb->ProcessEnvironmentBlock;
+}
 
-	Peb = (PPEB)Teb->ProcessEnvironmentBlock;
+INT main(VOID)
+{
+	PPEB Peb;
+	
+	Peb = GetPebAlt();
 
 	return ERROR_SUCCESS;
 }
