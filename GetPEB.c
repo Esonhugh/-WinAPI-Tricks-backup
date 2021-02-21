@@ -1,14 +1,20 @@
 #include <windows.h>
 #include "PEB.h"
 
-INT main(VOID)
+PPEB GetPeb(VOID)
 {
 #if defined(_WIN64)
-	//64bit
-	PPEB Peb = (PPEB)__readgsqword(0x60);
+	return (PPEB)__readgsqword(0x60);
 #elif define(_WIN32)
-	//32bit
-	PPEB Peb = (PPEB)__readfsdword(0x30);
+	return (PPEB)__readfsdword(0x30);
 #endif
+}
+
+INT main(VOID)
+{
+	PPEB Peb;
+	
+	Peb = (PPEB)GetPeb();
+
 	return ERROR_SUCCESS;
 }
