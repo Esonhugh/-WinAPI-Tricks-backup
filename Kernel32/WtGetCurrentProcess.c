@@ -1,4 +1,4 @@
 HANDLE WtGetCurrentProcess(VOID)
 {
-	return (HANDLE)((HANDLE) -1)
+	return (HANDLE)((HANDLE) -1);
 }
