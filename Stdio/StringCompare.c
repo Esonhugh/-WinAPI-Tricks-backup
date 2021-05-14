@@ -1,4 +1,4 @@
-INT WtStringCompare(LPCWSTR String1, LPCWSTR String2)
+INT StringCompare(LPCWSTR String1, LPCWSTR String2)
 {
 	for (; *String1 == *String2; String1++, String2++)
 	{
