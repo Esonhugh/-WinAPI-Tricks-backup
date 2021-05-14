@@ -1,4 +1,4 @@
-INT WtPseudoRandomInteger(VOID)
+INT PseudoRandomInteger(VOID)
 {
 	static unsigned long int OffsetNext = 1;
 
