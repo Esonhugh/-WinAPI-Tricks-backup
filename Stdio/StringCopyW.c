@@ -1,4 +1,4 @@
-PWCHAR WtStringCopyW(PWCHAR String1, PWCHAR String2)
+PWCHAR StringCopyW(PWCHAR String1, PWCHAR String2)
 {
 	PWCHAR p = String1;
 
