@@ -1,4 +1,4 @@
-DWORD WtDecimalToAsciiW(PWCHAR String, LPDWORD dwArray, DWORD dwLength)
+DWORD DecimalToAsciiW(PWCHAR String, LPDWORD dwArray, DWORD dwLength)
 {
 	DWORD dwX = ERROR_SUCCESS;
 
