@@ -1,4 +1,4 @@
-SIZE_T WtStringLength(LPCWSTR String)
+SIZE_T StringLength(LPCWSTR String)
 {
 	LPCWSTR String2;
 
