@@ -1,4 +1,4 @@
-PWCHAR WtSecureStringCopyAlt(PWCHAR String1, LPCWSTR String2, SIZE_T Size)
+PWCHAR SecureStringCopyAlt(PWCHAR String1, LPCWSTR String2, SIZE_T Size)
 {
 	PWCHAR pChar = String1;
 
