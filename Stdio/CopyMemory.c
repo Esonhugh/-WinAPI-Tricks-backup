@@ -1,4 +1,4 @@
-PVOID WtCopyMemory(PVOID Destination, CONST PVOID Source, SIZE_T Length)
+PVOID CopyMemory(PVOID Destination, CONST PVOID Source, SIZE_T Length)
 {
 	PBYTE D = (PBYTE)Destination;
 	PBYTE S = (PBYTE)Source;
