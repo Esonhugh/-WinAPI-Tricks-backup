@@ -1,4 +1,4 @@
-SIZE_T WtStringLength(LPCWSTR String)
+SIZE_T StringLength(LPCWSTR String)
 {
 	LPCWSTR String2;
 
@@ -7,7 +7,7 @@ SIZE_T WtStringLength(LPCWSTR String)
 	return (String2 - String);
 }
 
-PWCHAR WtStringCopyW(PWCHAR String1, PWCHAR String2)
+PWCHAR StringCopyW(PWCHAR String1, PWCHAR String2)
 {
 	PWCHAR p = String1;
 
@@ -16,9 +16,9 @@ PWCHAR WtStringCopyW(PWCHAR String1, PWCHAR String2)
 	return String1;
 }
 
-PWCHAR WtStringConcatW(PWCHAR String, PWCHAR String2)
+PWCHAR StringConcatW(PWCHAR String, PWCHAR String2)
 {
-	WtStringCopyW(&String[WtStringLength(String)], String2);
+	StringCopyW(&String[StringLength(String)], String2);
 
 	return String;
 }
