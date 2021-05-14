@@ -1,4 +1,4 @@
-PWCHAR WtStringTokenW(PWCHAR String, CONST PWCHAR Delim)
+PWCHAR StringTokenW(PWCHAR String, CONST PWCHAR Delim)
 {
 	PWCHAR Last;
 	PWCHAR SpanP, Token;
