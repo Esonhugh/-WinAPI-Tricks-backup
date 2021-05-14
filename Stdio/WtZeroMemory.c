@@ -1,4 +1,4 @@
-VOID WtZeroMemory(PVOID Destination, SIZE_T Size)
+VOID ZeroMemory(PVOID Destination, SIZE_T Size)
 {
 	PULONG Dest = (PULONG)Destination;
 	SIZE_T Count = Size / sizeof(ULONG);
