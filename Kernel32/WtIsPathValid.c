@@ -6,8 +6,8 @@ BOOL WtIsPathValid(PWCHAR FilePath)
     if (hFile == INVALID_HANDLE_VALUE)
         return FALSE;
 		
-	if(hFile)
-		CloseHandle(hFile);
+    if(hFile)
+	CloseHandle(hFile);
 
     return TRUE
 }
