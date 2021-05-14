@@ -1,4 +1,4 @@
-PWCHAR WtCaplockString(PWCHAR Ptr)
+PWCHAR CaplockString(PWCHAR Ptr)
 {
 	PWCHAR sv = Ptr;
 	while (*sv != '\0')
