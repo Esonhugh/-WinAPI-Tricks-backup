@@ -9,5 +9,5 @@ BOOL WtIsPathValid(PWCHAR FilePath)
     if(hFile)
 	CloseHandle(hFile);
 
-    return TRUE
+    return TRUE;
 }
