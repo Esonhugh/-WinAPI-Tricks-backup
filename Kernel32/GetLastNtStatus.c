@@ -10,7 +10,7 @@ PTEB GetTeb(VOID)
 #endif
 }
 
-NTSTATUS WtGetLastNtStatus(VOID)
+NTSTATUS GetLastNtStatus(VOID)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	return Teb->LastStatusValue;
@@ -20,7 +20,7 @@ INT main(VOID)
 {
 	NTSTATUS Status;
 
-	Status = WtGetLastNtStatus();
+	Status = GetLastNtStatus();
 
 	return ERROR_SUCCESS;
 }
