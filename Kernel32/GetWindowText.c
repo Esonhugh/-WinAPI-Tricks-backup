@@ -348,7 +348,7 @@ PPEB GetPeb(VOID)
 #endif
 }
 
-PWCHAR WtStringCopyW(PWCHAR String1, PWCHAR String2)
+PWCHAR StringCopyW(PWCHAR String1, PWCHAR String2)
 {
 	PWCHAR p = String1;
 
@@ -368,7 +368,7 @@ INT main(VOID)
 	Peb = (PPEB)GetPeb();
 	ProcessParameters = Peb->ProcessParameters;
 
-	WtStringCopyW(WindowName, ProcessParameters->WindowTitle.Buffer);
+	StringCopyW(WindowName, ProcessParameters->WindowTitle.Buffer);
 
 	return ERROR_SUCCESS;
 }
