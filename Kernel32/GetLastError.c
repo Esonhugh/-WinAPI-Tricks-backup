@@ -10,7 +10,7 @@ PTEB GetTeb(VOID)
 #endif
 }
 
-DWORD WtGetLastError(VOID)
+DWORD GetLastErrorEx(VOID)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	return Teb->LastErrorValue;
@@ -20,7 +20,7 @@ INT main(VOID)
 {
 	DWORD dwError;
 
-	dwError = WtGetLastError();
+	dwError = GetLastErrorEx();
 
 	return ERROR_SUCCESS;
 }
