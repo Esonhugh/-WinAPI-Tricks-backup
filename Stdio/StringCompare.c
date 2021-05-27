@@ -1,4 +1,4 @@
-INT StringCompare(LPCWSTR String1, LPCWSTR String2)
+INT StringCompareW(LPCWSTR String1, LPCWSTR String2)
 {
 	for (; *String1 == *String2; String1++, String2++)
 	{
@@ -7,4 +7,15 @@ INT StringCompare(LPCWSTR String1, LPCWSTR String2)
 	}
 
 	return ((*(LPCWSTR)String1 < *(LPCWSTR)String2) ? -1 : +1);
+}
+
+INT StringCompareA(LPCSTR String1, LPCSTR String2)
+{
+	for (; *String1 == *String2; String1++, String2++)
+	{
+		if (*String1 == '\0')
+			return 0;
+	}
+
+	return ((*(LPCSTR)String1 < *(LPCSTR)String2) ? -1 : +1);
 }
