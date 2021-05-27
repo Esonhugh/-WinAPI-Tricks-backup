@@ -13,7 +13,7 @@ PTEB GetTeb(VOID)
 #endif
 }
 
-DWORD WtGetCurrentProcessId(VOID)
+DWORD GetCurrentProcessId(VOID)
 {
 	PTEB Teb = GetTeb();
 	
