@@ -1,4 +1,4 @@
-PWCHAR CaplockString(PWCHAR Ptr)
+PWCHAR CaplockStringW(PWCHAR Ptr)
 {
 	PWCHAR sv = Ptr;
 	while (*sv != '\0')
@@ -11,7 +11,7 @@ PWCHAR CaplockString(PWCHAR Ptr)
 	return Ptr;
 }
 
-PCHAR CaplockString(PCHAR Ptr)
+PCHAR CaplockStringA(PCHAR Ptr)
 {
 	PCHAR sv = Ptr;
 	while (*sv != '\0')
