@@ -1,4 +1,4 @@
-BOOL WtIsPathValid(PWCHAR FilePath)
+BOOL IsPathValid(PWCHAR FilePath)
 {
     HANDLE hFile = INVALID_HANDLE_VALUE;
 
