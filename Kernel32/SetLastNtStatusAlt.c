@@ -1,5 +1,9 @@
 #include <windows.h>
-#include "TEB.h"
+
+
+/*
+DEFINITIONS FOR TEB MUST BE PRESENT
+*/
 
 PTEB GetTeb(VOID)
 {
@@ -10,7 +14,7 @@ PTEB GetTeb(VOID)
 #endif
 }
 
-VOID SetLastNtStatus(NTSTATUS Status)
+VOID SetLastNtStatusAlt(NTSTATUS Status)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	Teb->LastStatusValue = Status;
@@ -21,7 +25,7 @@ INT main(VOID)
 {
 	NTSTATUS Status = 1;
 
-	SetLastNtStatus(Status);
+	SetLastNtStatusAlt(Status);
 
 	return ERROR_SUCCESS;
 }
