@@ -22,6 +22,8 @@ PWCHAR StringCopyW(PWCHAR String1, PWCHAR String2)
 	return String1;
 }
 
+#define WT_MAX_PATH (MAX_PATH * sizeof(WCHAR))
+
 INT main(VOID)
 {
 	PPEB Peb;
