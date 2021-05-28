@@ -1,5 +1,8 @@
 #include <windows.h>
-#include "TEB.h"
+
+/*
+DEFINITIONS FOR TEB MUST BE PRESENT
+*/
 
 PTEB GetTeb(VOID)
 {
@@ -10,7 +13,7 @@ PTEB GetTeb(VOID)
 #endif
 }
 
-VOID SetLastErrorEx(DWORD ErrorCode)
+VOID SetLastErrorAlt(DWORD ErrorCode)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	Teb->LastErrorValue = ErrorCode;
@@ -21,7 +24,7 @@ INT main(VOID)
 {
 	DWORD dwError = 1;
 
-	SetLastErrorEx(1);
+	SetLastErrorAlt(1);
 
 	return ERROR_SUCCESS;
 }
