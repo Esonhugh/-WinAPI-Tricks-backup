@@ -1,29 +1,26 @@
-#include <windows.h>
-
 /*
-DEFINITIONS FOR TEB MUST BE PRESENT
-*/
 
-PTEB GetTeb(VOID)
-{
-#if defined(_WIN64)
-	return (PTEB)__readgsqword(0x30);
-#elif define(_WIN32)
-	return (PTEB)__readfsdword(0x18);
-#endif
-}
+GetLastErrorAlt function
+
+Summary:
+	Custom implementation of GetLastError. Relevant for malware dev, eliminates the need to dynamically resolve GetLastError from kernel32.dll
+
+Parameters:
+	N/A
+
+Return value:
+	The return value is the calling thread's last-error code.
+	
+Remarks:
+	This function requires the TEB structure to be defined, GetTeb function must also be present. Both are present in WINAPI-TRICKS
+
+Author:
+smelly__vx | June 3rd, 2021
+
+*/
 
 DWORD GetLastErrorAlt(VOID)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	return Teb->LastErrorValue;
-}
-
-INT main(VOID)
-{
-	DWORD dwError;
-
-	dwError = GetLastErrorAlt();
-
-	return ERROR_SUCCESS;
 }
