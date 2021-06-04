@@ -1,6 +1,6 @@
 #define HandleToUlong (h)((ULONG)(ULONG_PTR)(h))
 
-DWORD GetCurrentProcessId(VOID)
+DWORD GetCurrentProcessIdAlt(VOID)
 {
 	PTEB Teb = GetTeb();
 	
