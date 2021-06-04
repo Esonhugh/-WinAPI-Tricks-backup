@@ -1,29 +1,28 @@
-#include <windows.h>
-
 /*
-DEFINITIONS FOR TEB MUST BE PRESENT
-*/
+GetLastNtStatusAlt function
 
-PTEB GetTeb(VOID)
-{
-#if defined(_WIN64)
-	return (PTEB)__readgsqword(0x30);
-#elif define(_WIN32)
-	return (PTEB)__readfsdword(0x18);
-#endif
-}
+Summary:
+	Gets last NTSTATUS
+	
+Parameters:
+	N/A
+	
+Return value:
+	The return value is the calling thread's last NTSTATUS code.
+	
+Remarks:
+	Requires:
+	
+	GetTeb: https://github.com/vxunderground/WinAPI-Tricks/blob/main/GetTEB.c
+	TEB structure: https://github.com/vxunderground/WinAPI-Tricks/blob/main/Headers/TEB.h
+	
+Author:
+smelly__vx | June 3rd, 2021
+
+*/
 
 NTSTATUS GetLastNtStatusAlt(VOID)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	return Teb->LastStatusValue;
-}
-
-INT main(VOID)
-{
-	NTSTATUS Status;
-
-	Status = GetLastNtStatusAlt();
-
-	return ERROR_SUCCESS;
 }
