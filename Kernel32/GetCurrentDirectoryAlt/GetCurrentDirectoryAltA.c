@@ -4,6 +4,13 @@ GetCurrentDirectoryAltA function
 
 Summary:
 	Recreation of GetCurrentDirectory. Relevant for malware dev, eliminates the need to dynamically resolve GetCurrentDirectory from kernel32.dll
+	
+Parameters:
+	DWORD nBufferLength
+	The length of the buffer to receive the current binaries directory
+	
+	PCHAR lpBuffer
+	A buffer which will receive the current binaries directory
 
 Remarks:
 	Precise recreation of GetCurrentDirectory. See MSDN for more details.
