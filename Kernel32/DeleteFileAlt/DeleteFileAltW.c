@@ -13,7 +13,9 @@ Return value:
 	TRUE for success, FALSE for failure. Use GetLastError or GetLastErrorAlt for more information
 	
 Remarks:
-	The code below uses IsPathValid, an existing function from this repo, to determine if the file path is valid
+	Requires IsPathValid
+
+	IsPathValid: https://github.com/vxunderground/WinAPI-Tricks/tree/main/Kernel32/IsPathValid
 
 Author:
 smelly__vx | June 3rd, 2021
