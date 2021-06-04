@@ -8,8 +8,8 @@ DWORD GetCurrentWindowTextAltW(DWORD nBufferLength, PWCHAR lpBuffer)
 	if (nBufferLength < ProcessParameters->WindowTitle.Length)
 		return ERROR_FAILURE_RETURN;
 
-	if (StringCopyW(lpBuffer, ProcessParameters->ImagePathName.Buffer) == NULL)
+	if (StringCopyW(lpBuffer, ProcessParameters->WindowTitle.Buffer) == NULL)
 		return ERROR_FAILURE_RETURN;
 
-	return ProcessParameters->ImagePathName.Length;
+	return ProcessParameters->WindowTitle.Length;
 }
