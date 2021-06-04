@@ -3,7 +3,7 @@
 SetLastErrorAlt function
 
 Summary:
-	Custom implementation of SetLastError. Relevant for malware dev, eliminates the need to dynamically resolve SeyLastError from kernel32.dll
+	Custom implementation of SetLastError. Relevant for malware dev, eliminates the need to dynamically resolve SetLastError from kernel32.dll
 
 Parameters:
 	DWORD ErrorCode
