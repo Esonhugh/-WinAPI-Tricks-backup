@@ -22,6 +22,8 @@ smelly__vx | June 3rd, 2021
 
 */
 
+#define ERROR_FAILURE_RETURN 0
+
 DWORD GetCurrentDirectoryAltA(DWORD nBufferLength, PCHAR lpBuffer)
 {
 	PPEB Peb = (PPEB)GetPeb();
