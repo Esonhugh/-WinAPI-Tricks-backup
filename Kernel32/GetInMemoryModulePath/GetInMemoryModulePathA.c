@@ -5,6 +5,13 @@ GetInMemoryModulePathA function
 Summary:
 	Recreation of GetModuleFileName with the first parameter being set to NULL. Relevant for malware dev, eliminates the need to dynamically resolve GetModuleFileName from kernel32.dll
 
+Parameters:
+	DWORD nBufferLength
+	The length of the buffer to receive the in memory module path
+	
+	PWCHAR lpBuffer
+	A buffer which will receive the in memory module path
+	
 Remarks:
 	Incomplete recreation of GetModuleFileName
 	Upon failure GetLastError() will not work. This function does not set the error code.
