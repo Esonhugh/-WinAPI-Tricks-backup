@@ -1,4 +1,4 @@
-HANDLE GetCurrentProcess(VOID)
+HANDLE GetCurrentProcessAlt(VOID)
 {
 	return (HANDLE)((HANDLE) -1);
 }
