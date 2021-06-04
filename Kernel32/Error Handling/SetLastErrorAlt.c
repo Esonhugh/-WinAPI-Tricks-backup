@@ -13,7 +13,10 @@ Return value:
 	N/A
 	
 Remarks:
-	TEB and GetPeb must be defined.
+	Requires:
+	
+	GetTeb: https://github.com/vxunderground/WinAPI-Tricks/blob/main/GetTEB.c
+	TEB structure: https://github.com/vxunderground/WinAPI-Tricks/blob/main/Headers/TEB.h
 
 Author:
 smelly__vx | June 3rd, 2021
