@@ -1,30 +1,29 @@
-#include <windows.h>
-
 /*
-DEFINITIONS FOR TEB MUST BE PRESENT
+
+SetLastErrorAlt function
+
+Summary:
+	Custom implementation of SetLastError. Relevant for malware dev, eliminates the need to dynamically resolve SeyLastError from kernel32.dll
+
+Parameters:
+	DWORD ErrorCode
+	The last-error code for the thread.
+
+Return value:
+	N/A
+	
+Remarks:
+	TEB and GetPeb must be defined.
+
+Author:
+smelly__vx | June 3rd, 2021
+
 */
 
-PTEB GetTeb(VOID)
-{
-#if defined(_WIN64)
-	return (PTEB)__readgsqword(0x30);
-#elif define(_WIN32)
-	return (PTEB)__readfsdword(0x18);
-#endif
-}
 
 VOID SetLastErrorAlt(DWORD ErrorCode)
 {
 	PTEB Teb = (PTEB)GetTeb();
 	Teb->LastErrorValue = ErrorCode;
 	return;
-}
-
-INT main(VOID)
-{
-	DWORD dwError = 1;
-
-	SetLastErrorAlt(1);
-
-	return ERROR_SUCCESS;
 }
