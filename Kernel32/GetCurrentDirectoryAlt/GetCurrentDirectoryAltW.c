@@ -3,7 +3,7 @@
 GetCurrentDirectoryAltW function
 
 Summary:
-	Recreation of GetCurrentDirectory. Relevant for malware dev, eliminates the need to dynamically resolve GetLastError from kernel32.dll
+	Recreation of GetCurrentDirectory. Relevant for malware dev, eliminates the need to dynamically resolve GetCurrentDirectory from kernel32.dll
 
 Remarks:
 	Precise recreation of GetCurrentDirectory. See MSDN for more details.
