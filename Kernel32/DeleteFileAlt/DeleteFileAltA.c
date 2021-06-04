@@ -6,7 +6,7 @@ Summary:
 	Deletes an existing file using the CreateFile FILE_FLAG_DELETE_ON_CLOSE flag.
 
 Parameters:
-	- PCHAR Path
+	PCHAR Path
 	Path to file to delete
 
 Return value:
