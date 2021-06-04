@@ -12,7 +12,10 @@ Return value:
 	The return value is the calling thread's last-error code.
 	
 Remarks:
-	This function requires the TEB structure to be defined, GetTeb function must also be present.
+	Requires:
+	
+	GetTeb: https://github.com/vxunderground/WinAPI-Tricks/blob/main/GetTEB.c
+	TEB structure: https://github.com/vxunderground/WinAPI-Tricks/blob/main/Headers/TEB.h
 
 Author:
 smelly__vx | June 3rd, 2021
