@@ -17,7 +17,7 @@ BOOL WriteWatchVirtualAllocBufferAlloc(VOID)
 	Buffer[0] = 1024;
 	Count = 4096;
 
-	if (!GetWriteWatch(0, Buffer, 4096, Address, &Count, &Granularity))
+	if (GetWriteWatch(0, Buffer, 4096, Address, &Count, &Granularity) != ERROR_SUCCESS)
 		bFlag = Count != 1;
 
 EXIT_ROUTINE:
