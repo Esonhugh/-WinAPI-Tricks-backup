@@ -1,6 +1,3 @@
-#include <windows.h>
-#include "TEB.h"
-
 PPEB GetPebAlt(VOID)
 {
 	PTEB Teb;
@@ -10,13 +7,4 @@ PPEB GetPebAlt(VOID)
 	Teb = (PTEB)__readfsdword(0x18);
 #endif
 	return (PPEB)Teb->ProcessEnvironmentBlock;
-}
-
-INT main(VOID)
-{
-	PPEB Peb;
-	
-	Peb = GetPebAlt();
-
-	return ERROR_SUCCESS;
 }
