@@ -1,6 +1,3 @@
-#include <windows.h>
-#include "TEB.h"
-
 PTEB GetTeb(VOID)
 {
 #if defined(_WIN64)
@@ -8,13 +5,4 @@ PTEB GetTeb(VOID)
 #elif define(_WIN32)
 	return (PTEB)__readfsdword(0x18);
 #endif
-}
-
-INT main(VOID)
-{
-	PTEB Teb;
-	
-	Teb = (PTEB)GetTeb();
-
-	return ERROR_SUCCESS;
 }
